@@ -16,6 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from nodoRed.views import registrar
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('registro/', registrar)
 ]
