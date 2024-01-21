@@ -7,31 +7,36 @@ class Usuarios(models.Model):
     telefono = models.CharField(max_length=11)
     correo = models.CharField(max_length=50)
     contrasena = models.CharField(max_length=20)
+    rol = models.IntegerField()
+    def __str__(self):
+        return self.nombres
 
 class Vehiculos(models.Model):
     _id = models.ObjectIdField()
-    tipo = models.CharField(max_length=50)
+    tipo = models.IntegerField()
     modelo = models.CharField(max_length=50)
     marca = models.CharField(max_length=50)
     bateria = models.IntegerField()
-    estado = models.CharField(max_length=50)
+    estado = models.IntegerField()
     latitude = models.CharField(max_length=50)
     longitude = models.CharField(max_length=50)
+    def __str__(self):
+        return self.modelo
 
 class Tarjeta(models.Model):
     _id = models.ObjectIdField()
     usuario = models.CharField(max_length=100)
     nro_tarjeta = models.CharField(max_length=15)
     nombre = models.CharField(max_length=100)
-    fecha_caducidad = models.DateField()
+    fecha_caducidad = models.CharField(max_length=5)
     cvv = models.CharField(max_length=3)
 
 class Renta(models.Model):
     _id = models.ObjectIdField()
     vehiculo = models.CharField(max_length=100)
     usuario = models.CharField(max_length=100)
-    fecha_inicio = models.DateTimeField()
-    fecha_fin = models.DateTimeField()
-    distancia = models.IntegerField()
+    tiempo = models.IntegerField()
     estado_renta = models.BooleanField()
     precio_renta = models.IntegerField()
+    latitude_destino = models.CharField(max_length=50)
+    longitude_destino = models.CharField(max_length=50)

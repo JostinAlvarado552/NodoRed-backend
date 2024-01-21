@@ -1,2 +1,6 @@
 from django.contrib import admin
-#admin.site.register()
+
+from nodoRed.models import Vehiculos, Usuarios
+
+admin.site.register(Vehiculos)
+admin.site.register(Usuarios)

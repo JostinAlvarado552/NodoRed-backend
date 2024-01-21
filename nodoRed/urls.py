@@ -16,9 +16,18 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from nodoRed.views import registrar
+from nodoRed.views import registrar, log, getVehiculo, registrarVehiculo, registrarTarjeta, estadisticas, getVehiculos, \
+    getUsuarios, borrarUsuario
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('registro/', registrar)
+    path('registro/', registrar),
+    path('login/', log),
+    path('miguel/', getVehiculo),
+    path('registroVehiculo/', registrarVehiculo),
+    path('registroTarjeta/', registrarTarjeta),
+    path('stats/', estadisticas),
+    path('vehiculos/', getVehiculos),
+    path('usuarios/', getUsuarios),
+    path('Busuario/', borrarUsuario),
 ]
