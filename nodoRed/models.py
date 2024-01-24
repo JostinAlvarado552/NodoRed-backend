@@ -36,7 +36,4 @@ class Renta(models.Model):
     vehiculo = models.CharField(max_length=100)
     usuario = models.CharField(max_length=100)
     tiempo = models.IntegerField()
-    estado_renta = models.BooleanField()
-    precio_renta = models.IntegerField()
-    latitude_destino = models.CharField(max_length=50)
-    longitude_destino = models.CharField(max_length=50)
+    precio_renta = models.FloatField()

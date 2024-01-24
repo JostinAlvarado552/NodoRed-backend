@@ -17,7 +17,8 @@ from django.contrib import admin
 from django.urls import path
 
 from nodoRed.views import registrar, log, getVehiculo, registrarVehiculo, registrarTarjeta, estadisticas, getVehiculos, \
-    getUsuarios, borrarUsuario
+    getUsuarios, borrarUsuario, registrarRenta, getRenta, borrarVehiculo, actualizarVehiculo, darAdministrador, \
+    actualizarUsuario
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -30,4 +31,10 @@ urlpatterns = [
     path('vehiculos/', getVehiculos),
     path('usuarios/', getUsuarios),
     path('Busuario/', borrarUsuario),
+    path('Bvehiculo/', borrarVehiculo),
+    path('registroRenta/', registrarRenta),
+    path('obtenerRenta/', getRenta),
+    path('Avehiculo/', actualizarVehiculo),
+    path('Ausuario/', actualizarUsuario),
+    path('darAdmin/', darAdministrador)
 ]
